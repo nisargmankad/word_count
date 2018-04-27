@@ -1,0 +1,26 @@
+<head>
+        <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="{% url 'home'%}">Do another count</a>
+</nav>
+<h1>there are {{count}} words in your string</h1>
+<h2>Original text</h2>
+{{ fullTextHere }}
+<h2>
+    the words used
+</h2>
+<table style="width:50%" style="font-size:24">
+        <tr style="font-size:24">
+          <th align="left">Word</th>
+          <th align="left">Count</th> 
+        </tr>
+        
+        {% for word, counttotal in worddict %}
+            <tr style="font-size:20">
+                <td align="left">{{word}}</td>
+                
+                <td align="left">{{counttotal}}</td>
+            </tr>
+        {%endfor%}    
+        
